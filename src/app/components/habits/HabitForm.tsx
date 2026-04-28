@@ -16,7 +16,7 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
   const router = useRouter();
   const [name, setName] = useState(habit?.name || "");
   const [description, setDescription] = useState(habit?.description || "");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
 
     const validation = validateHabitName(name);
     if (!validation.valid) {
-      setError(validation.error);
+      setError(validation.error || "Validation failed");
       setIsSubmitting(false);
       return;
     }
