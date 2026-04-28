@@ -20,12 +20,12 @@ export default function LoginForm() {
     const user = users.find((u) => u.email === email);
 
     if (!user) {
-      setError("No account found with this email.");
+      setError("Invalid email or password.");
       return;
     }
 
     if (user.password !== password) {
-      setError("Incorrect password.");
+      setError("Invalid email or password.");
       return;
     }
 
@@ -58,6 +58,7 @@ export default function LoginForm() {
           <input
             type="email"
             required
+            data-testid="auth-login-email"
             className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
             placeholder="name@example.com"
             value={email}
@@ -72,6 +73,7 @@ export default function LoginForm() {
           <input
             type="password"
             required
+            data-testid="auth-login-password"
             className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
             placeholder="••••••••"
             value={password}
@@ -81,6 +83,7 @@ export default function LoginForm() {
 
         <button
           type="submit"
+          data-testid="auth-login-submit"
           className="w-full py-4 mt-2 bg-[var(--color-taupe-primary)] text-white rounded-xl font-bold shadow-lg hover:brightness-95 active:scale-[0.98] transition-all"
         >
           Sign In

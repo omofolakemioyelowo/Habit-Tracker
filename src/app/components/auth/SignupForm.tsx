@@ -17,7 +17,7 @@ export default function SignupForm() {
 
     const users = storage.getUsers();
     if (users.find((u) => u.email === email)) {
-      setError("An account with this email already exists.");
+      setError("User already exists.");
       return;
     }
 
@@ -58,6 +58,7 @@ export default function SignupForm() {
           <input
             type="email"
             required
+            data-testid="auth-signup-email"
             className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
             placeholder="name@example.com"
             value={email}
@@ -72,6 +73,7 @@ export default function SignupForm() {
           <input
             type="password"
             required
+            data-testid="auth-signup-password"
             className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
             placeholder="••••••••"
             value={password}
@@ -81,6 +83,7 @@ export default function SignupForm() {
 
         <button
           type="submit"
+          data-testid="auth-signup-submit"
           className="w-full py-4 mt-2 bg-[var(--color-taupe-primary)] text-white rounded-xl font-bold shadow-lg hover:brightness-95 active:scale-[0.98] transition-all"
         >
           Create Account
