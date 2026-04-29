@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { storage } from "@/lib/storage";
-import { Habit } from "@/lib/types/habit";
+import { Habit } from "@/types/habit";
 import { validateHabitName } from "@/lib/validators";
 
 interface HabitFormProps {
