@@ -19,7 +19,7 @@ export default function LoginForm() {
 
     const sanitizedEmail = email.toLowerCase().trim();
     const users: User[] = storage.getUsers();
-    const user = users.find((u) => u.email === sanitizedEmail);
+    const user = users.find((u) => (u.email || "").toLowerCase().trim() === sanitizedEmail);
 
     if (!user) {
       setError("Invalid email or password.");

@@ -18,7 +18,7 @@ export default function SignupForm() {
 
     const sanitizedEmail = email.toLowerCase().trim();
     const users = storage.getUsers();
-    if (users.find((u) => u.email === sanitizedEmail)) {
+    if (users.find((u) => (u.email || "").toLowerCase().trim() === sanitizedEmail)) {
       setError("User already exists.");
       return;
     }
