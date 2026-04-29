@@ -16,15 +16,16 @@ export default function SignupForm() {
     e.preventDefault();
     setError("");
 
+    const sanitizedEmail = email.toLowerCase().trim();
     const users = storage.getUsers();
-    if (users.find((u) => u.email === email)) {
+    if (users.find((u) => u.email === sanitizedEmail)) {
       setError("User already exists.");
       return;
     }
 
     const newUser = {
       id: crypto.randomUUID(),
-      email,
+      email: sanitizedEmail,
       password,
       createdAt: new Date().toISOString(),
     };
