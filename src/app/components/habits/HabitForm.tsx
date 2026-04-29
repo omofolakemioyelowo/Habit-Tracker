@@ -45,12 +45,10 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
     }
 
     const existingHabits = storage.getHabits();
-    
+
     if (habit) {
       const updatedHabits = existingHabits.map((h) =>
-        h.id === habit.id
-          ? { ...h, name: validation.value, description }
-          : h
+        h.id === habit.id ? { ...h, name: validation.value, description } : h,
       );
       storage.saveHabits(updatedHabits);
     } else {
@@ -99,7 +97,7 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
             data-testid="habit-name-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
+            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all pr-12"
             placeholder="e.g., Drink Water"
           />
         </div>
@@ -117,7 +115,7 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
             data-testid="habit-description-input"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
+            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all pr-12"
             placeholder="e.g., Drink 8 glasses daily"
           />
         </div>
@@ -134,7 +132,7 @@ export default function HabitForm({ habit, onSave, onCancel }: HabitFormProps) {
             data-testid="habit-frequency-select"
             value="daily"
             disabled
-            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all"
+            className="w-full p-3 rounded-xl border border-[var(--color-taupe-primary)]/20 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-taupe-primary)] transition-all pr-12"
           >
             <option value="daily">Daily</option>
           </select>

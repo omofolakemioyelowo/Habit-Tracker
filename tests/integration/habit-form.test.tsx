@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import HabitForm from "../../src/app/components/habits/HabitForm";
 import HabitList from "../../src/app/components/habits/HabitList";
 import { storage } from "../../src/lib/storage";
-import { Habit } from "../../src/lib/types/habit";
+import { Habit } from "../../src/types/habit";
 
 describe("habit form", () => {
   beforeEach(() => {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { storage } from "@/lib/storage";
-import { Habit } from "@/lib/types/habit";
+import { Habit } from "@/types/habit";
 import HabitCard from "./HabitCard";
 import HabitForm from "./HabitForm";
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { toggleHabitCompletion } from "../../src/lib/habits";
-import { Habit } from "../../src/lib/types/habit";
+import { Habit } from "../../src/types/habit";
 
 describe("toggleHabitCompletion", () => {
   it("adds a completion date when the date is not present", () => {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { storage } from "@/lib/storage";
-import { Habit } from "@/lib/types/habit";
+import { Habit } from "@/types/habit";
 import { getHabitSlug } from "@/lib/slug";
 import { calculateCurrentStreak } from "@/lib/streaks";
 import { toggleHabitCompletion } from "@/lib/habits";

@@ -1,5 +1,5 @@
-import { User, Session } from "./types/auth";
-import { Habit } from "./types/habit";
+import { User, Session } from "../types/auth";
+import { Habit } from "../types/habit";
 
 const KEYS = {
   USERS: "habit-tracker-users",

@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { storage } from "@/lib/storage";
-import { Habit } from "@/lib/types/habit";
+import { Habit } from "@/types/habit";
 import HabitList from "../components/habits/HabitList";
 import HabitForm from "../components/habits/HabitForm";
-import PWAInstaller from "../components/shared/PWAInstaller";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -109,8 +108,6 @@ export default function DashboardPage() {
       <main className="flex-1">
         <HabitList habits={habits} onRefresh={refreshHabits} />
       </main>
-
-      <PWAInstaller />
     </div>
   );
 }

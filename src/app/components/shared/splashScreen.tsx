@@ -10,7 +10,7 @@ export default function SplashScreen() {
     >
       <div className="relative w-32 h-32 mb-6 animate-[zoomIn_0.6s_ease-out_forwards]">
         <Image
-          src="/icons/512.png"
+          src="/icons/icon-512.png"
           alt="Habit Tracker Logo"
           fill
           priority
